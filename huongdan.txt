@@ -1,0 +1,26 @@
+video hướng dẫn:https://www.youtube.com/watch?v=1TuW-uh2edo
+
+thông tin:
+Vào config/database.php để cài tên miền site mẹ với config mysqli
+vào site.php để config auto site con dạng cpanel
+vào lib/buffme để thêm api bên nào tùy ý -> nếu api khác các bên thì vào thêm api/service/buy.php để thêm sửa
+đảm bảo code không quá 900kb và không đến 1MB | code không tốn dung lượng | chỉ chạy vietnix , 123host ,... 
+
+Zalo:0986379490
+nhận code website giao diện riêng biệt 
+ 
+cách lấy mã thể loại và mã dịch vụ:
+vd: https://subgiare.vn/service/facebook/like-post-sale/order
+
+facebook là mã thể loại
+like-post-sale là mã dịch vụ
+
+mã server vd: Sv9 (Like clone nuôi, max 1m5 like (nên dùng ổn định)) 
+thì mình điền là sv9
+
+
+apikey là apikey bên nhà cung cấp nhé
+
+callback gạch thẻ:/api/callback/thesieure.php
+cron momo : /api/cron/momo.php
+cron mbbank: /api/cron/mbbank.php

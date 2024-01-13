@@ -1,0 +1,1 @@
+{"status":3,"message":"CARD_INVALID","request_id":"102124164","declared_value":10000,"value":0,"amount":0,"code":"1222222222222","serial":"1111111111111","telco":"VIETTEL","trans_id":11824378,"callback_sign":"181c003e3a309e4f1185a6441f9d09a9"}

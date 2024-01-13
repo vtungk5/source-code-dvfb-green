@@ -1,0 +1,54 @@
+.fs-14 {
+    font-size: 14px;
+}
+
+.welcome__select-wrapper>.logo-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome__select-wrapper>.welcome__note {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-group.welcome__buttons {
+    justify-content: center;
+}
+
+form {
+    width: 78%;
+}
+
+html.dark .welcome {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #212121;
+}
+
+@media (max-width: 790px) {
+    .auth-welcome {
+        overflow-y: auto;
+        max-width: 100%;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: #fff;
+    }
+
+    html.dark .auth-welcome {
+        background-color: #212121;
+    }
+
+    .bg-welcome {
+        display: none;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .welcome__select-wrapper {
+        top: 45%;
+    }
+}

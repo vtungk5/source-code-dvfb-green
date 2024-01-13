@@ -1,0 +1,92 @@
+RewriteEngine On
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:apikey}]
+
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+<ifmodule mod_php4.c>
+php_value zlib.output_compression 16386
+</ifmodule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE image/svg+xml
+SetOutputFilter DEFLATE
+</IfModule>
+
+
+
+RewriteRule ^auth/$ /views/auth/index.php [L]
+RewriteRule ^auth/login$ /views/auth/login.php [L]
+RewriteRule ^auth/register$ /views/auth/register.php [L]
+RewriteRule ^auth/install$ /views/auth/install.php [L]
+RewriteRule ^auth/logout$ /api/auth/logout.php [L]
+
+RewriteRule ^$ /views/home/index.php [L]
+RewriteRule ^home$ /views/home/index.php [L]
+RewriteRule ^logout$ /api/auth/logout.php [L]
+RewriteRule ^profile/info$ /views/profile/index.php [L]
+RewriteRule ^nap-tien/nap-the-cao$ /views/naptien/napthe.php [L]
+RewriteRule ^nap-tien/chuyen-khoan$ /views/naptien/chuyenkhoan.php [L]
+RewriteRule ^tao-dai-ly$ /views/sitecon/index.php [L]
+
+RewriteRule ^api/auth/login$ /api/auth/login.php [L]
+RewriteRule ^api/auth/register$ /api/auth/register.php [L]
+RewriteRule ^api/auth/install$ /api/auth/install.php [L]
+
+RewriteRule ^api/profile/thay-doi-apikey$ /api/profile/change-apikey.php [L]
+RewriteRule ^api/profile/thay-doi-ho-va-ten$ /api/profile/change-name.php [L]
+RewriteRule ^api/profile/thay-doi-mat-khau$ /api/profile/change-password.php [L]
+
+RewriteRule ^api/admin/member/edit$ /api/admin/member/edit.php [L]
+RewriteRule ^api/admin/member/delete$ /api/admin/member/delete.php [L]
+RewriteRule ^api/admin/member/congtien$ /api/admin/member/congtien.php [L]
+RewriteRule ^api/admin/member/trutien$ /api/admin/member/trutien.php [L]
+RewriteRule ^api/admin/theloai/create$ /api/admin/theloai/create.php [L]
+RewriteRule ^api/admin/theloai/edit$ /api/admin/theloai/edit.php [L]
+RewriteRule ^api/admin/theloai/delete$ /api/admin/theloai/delete.php [L]
+RewriteRule ^api/admin/service/create$ /api/admin/service/create.php [L]
+RewriteRule ^api/admin/service/edit$ /api/admin/service/edit.php [L]
+RewriteRule ^api/admin/service/delete$ /api/admin/service/delete.php [L]
+RewriteRule ^api/admin/server/create$ /api/admin/server/create.php [L]
+RewriteRule ^api/admin/server/edit$ /api/admin/server/edit.php [L]
+RewriteRule ^api/admin/server/delete$ /api/admin/server/delete.php [L]
+RewriteRule ^api/admin/setting/edit$ /api/admin/setting/index.php [L]
+RewriteRule ^api/admin/daily/edit$ /api/admin/sitecon/edit.php [L]
+RewriteRule ^api/admin/order/duyet$ /api/admin/order/duyet.php [L]
+RewriteRule ^api/admin/lienhe/create$ /api/admin/lienhe/create.php [L]
+RewriteRule ^api/admin/lienhe/edit$ /api/admin/lienhe/edit.php [L]
+RewriteRule ^api/admin/lienhe/delete$ /api/admin/lienhe/delete.php [L]
+
+
+RewriteRule ^api/nap-tien/nap-the-cao$ /api/naptien/napthe.php [L]
+RewriteRule ^api/dai-ly/them-ten-mien$ /api/sitecon/add.php [L]
+RewriteRule ^api/bai-viet/create$ /api/post/create.php [L]
+
+RewriteRule ^admin/$ /views/admin/index.php [L]
+RewriteRule ^admin/setting$ /views/admin/setting/index.php [L]
+RewriteRule ^admin/thanh-vien/list$ /views/admin/member/index.php [L]
+RewriteRule ^admin/dich-vu/list$ /views/admin/service/index.php [L]
+RewriteRule ^admin/the-loai/list$ /views/admin/theloai/index.php [L]
+RewriteRule ^admin/server/list$ /views/admin/server/index.php [L]
+RewriteRule ^admin/order/list$ /views/admin/order/index.php [L]
+RewriteRule ^admin/naptien/thecao$ /views/admin/naptien/thecao.php [L]
+RewriteRule ^admin/naptien/chuyenkhoan$ /views/admin/naptien/chuyenkhoan.php [L]
+RewriteRule ^admin/daily/list$ /views/admin/sitecon/index.php [L]
+RewriteRule ^admin/lienhe/list$ /views/admin/lienhe/index.php [L]
+
+RewriteRule ^service/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /views/service/index.php?theloai=$1&dichvu=$2 [L]
+RewriteRule ^api/service/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /api/service/buy.php?theloai=$1&dichvu=$2 [L]
